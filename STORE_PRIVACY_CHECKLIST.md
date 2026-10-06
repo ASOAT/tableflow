@@ -23,6 +23,7 @@
 | 数据出售/无关用途/画像 | 无 | 只服务用户明确发起的导出及其开启的图标功能 |
 | Privacy policy URL | 部署与匿名访问结果见 RELEASE_CANDIDATE_REPORT.md | 发布 site/ 到 GitHub Pages，填写真实 HTTPS 的 privacy/ 地址；运行 check:privacy 并匿名打开后填写 Partner Center。本地路径不可代替 |
 | 静态隐私网站托管 | GitHub Pages 的安全访问日志单独披露 | GitHub 会记录网站访问者 IP；网站没有脚本/analytics/第三方资源，托管日志不是扩展上传网页表格 |
-| 支持与发布者信息 | [REQUIRED BEFORE RELEASE] | 政策的公开隐私联系邮箱必须由发布者填写真实邮箱；Partner Center Support contact 字段为可选，不得编造联系方式 |
+| 公共支持入口 | [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues) | 隐私政策和商店文案统一使用此 URL；Issue 是公开渠道，提醒用户不要提交敏感表格内容、个人信息、Token、Cookie 或完整业务数据 |
+| 发布者账户与联系信息 | 由发布者本人核对 | 确认 Microsoft Edge Developer account 已验证、Account type 为 Individual、Publisher display name 为 `Asoat`，拥有代码/名称/素材发布权，且 Microsoft 开发者账户联系邮箱真实有效；账户邮箱用于账户和商店管理，无需公开展示，公共支持可使用 GitHub Issues |
 
 提交前保存实际 Partner Center 披露截屏，逐项与最终 ZIP、PRIVACY_POLICY.md 和商店文案复核。该表不代表 Partner Center 已填写或已提交。Pages 配置、仓库或 workflow 存在不能代替公开 URL 的真实检查。部署步骤见 [SITE_DEPLOYMENT.md](SITE_DEPLOYMENT.md)，发布者人工确认见 [store-assets/PARTNER_CENTER_CHECKLIST.md](store-assets/PARTNER_CENTER_CHECKLIST.md)。

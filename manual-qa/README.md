@@ -28,4 +28,6 @@ Excel 可自动识别数字和日期，因此显示格式变化不等同于数�
 
 各必需项目只能按真实结论填 `pending`、`pass` 或 `fail`。结果全部通过后才把九个必需项改为小写 `pass`；记录对应 `evidence`（截图/文件路径或公开 URL）及 `notes`。未执行、失败或不确定都不能写 `pass`。不要把 CI 或 Playwright Chromium 的结果抄成真人 Edge / Excel 通过。
 
+`publisherInfoReviewed` 须由本人按根目录清单核对账户验证、Individual 账号类型、`Asoat` 显示名称、代码/名称/素材发布权和 Microsoft 开发者账户真实有效的联系邮箱。账户邮箱不要求公开；公共支持入口为 [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues)。Issues 公开可见，请勿提交敏感表格内容、个人信息、账号密码、Token、Cookie 或完整业务数据。
+
 `npm run release:final` 会读取这个文件；任一必需项不是 `pass` 时必须拒绝生成正式 ZIP。真人验收完成前只使用 `-rc.zip`。

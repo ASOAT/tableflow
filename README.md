@@ -108,7 +108,7 @@ Shadow DOM 是可访问根的遍历方式，采用 `domWalker.ts` 统一交给�
 
 不申请 tabs、downloads、clipboardRead 或 clipboardWrite。CSV 通过本地 Blob 下载；用户点击复制时写入 TSV 与 HTML，保留内部换行及行列边界，纯文本/选区复制作为回退。CSV 带 UTF-8 BOM 并正确转义逗号、引号、换行。
 
-所有网页内容仅在当前浏览器内存处理，不持久保存表格，不发出产品网络请求。storage.local 保存 `autoIconSites`、`onboardingSeen`、`uiLanguage`。用户选择复制/下载后，剪贴板与文件由用户管理。隐私说明见 [PRIVACY_POLICY.md](PRIVACY_POLICY.md) 和纯静态 `docs/privacy.html`；隐私页尚未在线发布。测试依赖与 Chromium 下载、本机测试服务属于开发过程。
+所有网页内容仅在当前浏览器内存处理，不持久保存表格，不发出产品网络请求。storage.local 保存 `autoIconSites`、`onboardingSeen`、`uiLanguage`。用户选择复制/下载后，剪贴板与文件由用户管理。隐私说明见 [PRIVACY_POLICY.md](PRIVACY_POLICY.md)、纯静态 `docs/privacy.html` 和[线上隐私政策](https://asoat.github.io/tableflow/privacy/)。测试依赖与 Chromium 下载、本机测试服务属于开发过程。
 
 ## 发布准备
 
@@ -124,10 +124,12 @@ npm run smoke:world
 
 复制 `manual-qa/result.example.json` 为 `manual-qa/result.json`，填写实际日期、测试人、Edge/Windows/Excel版本和证据。9个必需项默认pending；只有真实通过才填pass。实际result.json不提交GitHub。`npm run release:final` 会拒绝未通过、版本不一致或缺少元信息的结果，并严格检查正式截图，随后完整发布检查和ZIP smoke；未通过不会生成 `release/tableflow-edge-v0.5.1.zip`。不要把Chromium或CI结果写成真人Edge/Excel通过。
 
-静态站点位于 `site/`，部署说明见 [SITE_DEPLOYMENT.md](SITE_DEPLOYMENT.md)。`npm run site:preview` 仅用于本机预览；线上隐私URL用 `npm run check:privacy -- <URL>` 匿名检查，独立于常规verify。正式截图在 `store-assets/screenshots/{zh-CN,en}/`：`npm run check:screenshots` 严格检查，`--allow-pending`只供RC准备，不代替人工视觉审核。公开联系邮箱、发布者和Partner Center字段仍须本人确认。
+静态站点位于 `site/`，部署说明见 [SITE_DEPLOYMENT.md](SITE_DEPLOYMENT.md)。`npm run site:preview` 仅用于本机预览；线上隐私URL用 `npm run check:privacy -- <URL>` 匿名检查，独立于常规verify。正式截图在 `store-assets/screenshots/{zh-CN,en}/`：`npm run check:screenshots` 严格检查，`--allow-pending`只供RC准备，不代替人工视觉审核。公共支持入口统一为 [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues)。Issue 面向公众，请勿提交敏感表格内容、个人信息、Token、Cookie 或完整业务数据。
+
+发布者须本人核对 Microsoft Edge Developer account 已验证、Account type 为 Individual、Publisher display name 为 `Asoat`，确认拥有 TableFlow 代码、名称和素材的发布权，以及开发者账户联系邮箱真实有效。该账户邮箱用于账户和商店管理，无需在隐私页或商店文案公开；公共支持可使用 GitHub Issues。`publisherInfoReviewed` 的实际结论和真实测试环境、日期、测试人须记录于本地人工验收结果，CI 不能代替本人核对。
 
 公开项目：[ASOAT/tableflow](https://github.com/ASOAT/tableflow)。静态 [主页](https://asoat.github.io/tableflow/) 和 [隐私政策](https://asoat.github.io/tableflow/privacy/) 已发布；没有新增扩展业务服务器。源码推送在Windows CI执行完整发布检查，Pages工作流只部署site目录。
 
-`smoke:world` 独立观察十个无需登录的公开页面，记录访问、结构、完整性及实际导出，不纳入确定性CI，不承诺全网支持。截图 demo 在 `tests/store-demo/`；启动 `npm run dev` 后执行 `node store-assets/screenshots/capture.mjs` 可产生1280×800原始素材，不能当作真实Excel截图。商店文案与计划在 `store-assets/`；原生Edge、真实Excel、系统缩放和发布隐私URL的剩余验收见 [MANUAL_RELEASE_CHECKLIST.md](MANUAL_RELEASE_CHECKLIST.md)。本项目不会自动提交商店或发布隐私网站。
+`smoke:world` 独立观察十个无需登录的公开页面，记录访问、结构、完整性及实际导出，不纳入确定性CI，不承诺全网支持。截图 demo 在 `tests/store-demo/`；启动 `npm run dev` 后执行 `node store-assets/screenshots/capture.mjs` 可产生1280×800原始素材，不能当作真实Excel截图。商店文案与计划在 `store-assets/`；原生Edge、真实Excel、系统缩放和发布隐私URL的验收要求见 [MANUAL_RELEASE_CHECKLIST.md](MANUAL_RELEASE_CHECKLIST.md)。本项目不会自动提交商店；默认分支的站点修改由 GitHub Pages 工作流部署。
 
 官方参考：[activeTab](https://developer.chrome.com/docs/extensions/develop/concepts/activeTab)、[scripting](https://developer.chrome.com/docs/extensions/reference/api/scripting)、[Edge 本地加载](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading)、[Playwright 扩展测试](https://playwright.dev/docs/chrome-extensions)。

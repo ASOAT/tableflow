@@ -31,6 +31,8 @@ Some pages cannot be read completely. Pagination exports the current page and do
 
 ## Help
 
-Let the page finish loading, then scan again. If a problem remains, use Help to generate a local diagnostic report that excludes business cell content. Do not share passwords or full business datasets.
+Let the page finish loading, then scan again. If a problem remains, use Help to generate a local diagnostic report that excludes business cell content.
+
+For support, privacy questions, or compatibility reports, contact the maintainer through [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues). Issues are public. Do not post sensitive table content, personal information, passwords, tokens, cookies, or complete business datasets. Review diagnostic reports and screenshots before sharing them.
 
 Publisher editing note: this text describes v0.5.1 RC. Verify the genuine privacy URL and support channel before submission. Remove this editing note from the public description.

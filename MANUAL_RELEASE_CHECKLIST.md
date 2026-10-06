@@ -1,6 +1,6 @@
 # TableFlow v0.5.1 RC 人工发布验收
 
-当前全部待执行。自动化 Chromium 验收不能替代 Microsoft Edge Stable、真实 Microsoft Excel 和 Windows 系统缩放。结果与证据填写到 `manual-qa/result.json`，不得自动写为通过。
+本清单为人工验收标准，实际结论与证据填写到 `manual-qa/result.json`。自动化 Chromium 验收不能替代 Microsoft Edge Stable、真实 Microsoft Excel 和 Windows 系统缩放，不得自动写为通过。
 
 ## 环境与入口
 
@@ -64,9 +64,21 @@
 ## 发布材料与责任信息
 
 - [ ] 待人工完成：正式截图视觉审核（`screenshotsReviewed`），1280×800，文字可读、无调试截图、无虚构评价或背书；展示 Excel 的截图必须来自真实 Excel。
-- [ ] 待人工完成：实际 HTTPS 隐私 URL（`privacyUrl`），匿名 HTTP 200 且无需登录，内容与当前版本一致；执行 `npm run check:privacy -- <真实URL>`，保留检查结果。
-- [ ] 待人工完成：发布者、账号类型、显示名称、权利、真实联系邮箱、市场及 listing 信息审核（`publisherInfoReviewed`）；联系方式占位符必须替换为真实信息。
+- [ ] 待人工完成：实际 HTTPS 隐私 URL（`privacyUrl`），匿名 HTTP 200 且无需登录，内容与当前版本一致；执行 `npm run check:privacy -- https://asoat.github.io/tableflow/privacy/`，保留检查结果，并由本人确认页面包含 GitHub Issues 支持入口。
+- [ ] 待人工完成：发布者账户及发布权审核（`publisherInfoReviewed`），按下列标准由发布者本人逐项核对。
 - [ ] 待人工完成：Windows Narrator 实际朗读首次说明、选表、状态、风险确认及错误，记录可用性问题。
+
+`publisherInfoReviewed: "pass"` 的人工标准：
+
+- Microsoft Edge Developer account 已验证。
+- 本人核对 Account type 为 `Individual`。
+- 本人核对 Publisher display name 为 `Asoat`。
+- 发布者本人确认拥有 TableFlow 代码、名称和素材的发布权。
+- 本人核对 Microsoft 开发者账户中存在真实有效的联系邮箱。
+- 该账户联系邮箱用于账户和商店管理，不要求公开展示；公开私人邮箱不是 `release:final` 的必要条件。
+- 本人核对公共支持入口可使用 [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues)。Issues 是公开渠道，页面及文案应提醒用户不要提交敏感表格内容、个人信息、账号密码、Token、Cookie 或完整业务数据。
+
+以上是核对标准，不表示维护者已由自动化验证账户、姓名、权利或邮箱。市场、listing 和其他提交字段另按 Partner Center 清单核对。
 
 Partner Center 提交步骤另见 `store-assets/PARTNER_CENTER_CHECKLIST.md`；没有访问或操作 Partner Center 就不能勾选完成。
 

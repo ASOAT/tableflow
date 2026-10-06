@@ -46,7 +46,11 @@
 
 ## 联系方式与政策更新
 
-公开隐私联系邮箱：[REQUIRED BEFORE RELEASE]。此项必须由发布者在正式发布前填写真实可用的邮箱；当前没有编造联系方式。政策对应上述版本的实际行为，功能或数据处理变化时需要同步更新日期和内容。
+如需反馈问题、提出隐私相关询问或报告兼容性问题，请通过 TableFlow GitHub Issues 联系维护者：[https://github.com/ASOAT/tableflow/issues](https://github.com/ASOAT/tableflow/issues)。Microsoft 开发者账户中的真实联系信息用于账户和商店管理，不在此页面公开。
+
+GitHub Issues 是公开渠道，不是私密支持渠道。请勿在公开 Issue 中提交敏感表格内容、个人信息、Token、Cookie、完整业务数据或其他机密信息；如需说明问题，请先移除或脱敏相关内容。
+
+政策对应上述版本的实际行为，功能或数据处理变化时需要同步更新日期和内容。
 
 ## English
 
@@ -96,4 +100,8 @@ These pages are entirely static, with no JavaScript, analytics, third-party font
 
 ### Contact and changes
 
-Public privacy contact email: [REQUIRED BEFORE RELEASE]. The publisher must replace this with a genuine working email before final release. No address has been invented. This policy describes the version above; changes to features or data handling require an updated policy and date.
+For feedback, privacy questions, or compatibility reports, contact the maintainer through TableFlow GitHub Issues: [https://github.com/ASOAT/tableflow/issues](https://github.com/ASOAT/tableflow/issues). The Microsoft developer account's genuine contact information is used for account and store administration and is not published on this page.
+
+GitHub Issues is a public channel, not a private support channel. Do not post sensitive table content, personal information, tokens, cookies, complete business datasets, or other confidential information in a public issue. Remove or redact such information before describing a problem.
+
+This policy describes the version above; changes to features or data handling require an updated policy and date.

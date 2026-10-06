@@ -44,13 +44,21 @@ describe('static privacy website', () => {
     expect(normalize(parse(privacy).querySelector('main')!.textContent!)).toBe(normalize(markdownText));
   });
 
-  it('discloses actual preference keys and the required contact placeholder', () => {
+  it('discloses actual preference keys and public Issues support without exposing an email', () => {
     const text = parse(privacy).body.textContent!;
     for (const key of [AUTO_ICON_SITES_KEY, LANGUAGE_KEY, 'onboardingSeen']) {
       expect(text).toContain(key);
       expect(policy).toContain(key);
     }
-    expect(text).toMatch(/\[REQUIRED BEFORE RELEASE\]|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/);
+    expect(text).not.toContain('[REQUIRED BEFORE RELEASE]');
+    expect(policy).not.toContain('[REQUIRED BEFORE RELEASE]');
+    expect(parse(privacy).querySelectorAll('a[href="https://github.com/ASOAT/tableflow/issues"]')).toHaveLength(2);
+    expect(parse(privacy).querySelector('a[href^="mailto:"]')).toBeNull();
+    expect(text).toContain('GitHub Issues 是公开渠道，不是私密支持渠道');
+    expect(text).toContain('不在此页面公开');
+    expect(text).toContain('敏感表格内容、个人信息、Token、Cookie、完整业务数据');
+    expect(text).toContain('GitHub Issues is a public channel, not a private support channel');
+    expect(text).toContain('tokens, cookies, complete business datasets');
     expect(text).toContain('0.5.1 Release Candidate');
     expect(text).toContain('Microsoft Edge');
     expect(text).toContain('2026-10-06');

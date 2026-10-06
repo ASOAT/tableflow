@@ -24,14 +24,16 @@ GitHub Pages 网站面向公众，不要求访问者登录。部署权限只用�
 
 当前部署结果及实际 URL 以 `RELEASE_CANDIDATE_REPORT.md` 的验收记录为准。配置存在、构建成功或仓库存在都不能代替匿名访问验证。
 
-2026-10-06 实际发布：仓库 https://github.com/ASOAT/tableflow ，主页 https://asoat.github.io/tableflow/ ，隐私政策 https://asoat.github.io/tableflow/privacy/ 。Pages工作流已成功，后者经 `npm run check:privacy` 匿名HTTPS HTML 200检查通过。公开联系邮箱仍是发布前必填项，不因此改为已审核。
+2026-10-06 首次实际发布：仓库 https://github.com/ASOAT/tableflow ，主页 https://asoat.github.io/tableflow/ ，隐私政策 https://asoat.github.io/tableflow/privacy/ 。Pages工作流已成功，后者经 `npm run check:privacy` 匿名HTTPS HTML 200检查通过。政策修改后须重新部署和匿名检查；最新结果见发布报告。
+
+公共支持入口统一为 [TableFlow GitHub Issues](https://github.com/ASOAT/tableflow/issues)，用于问题反馈、隐私询问和兼容性报告。Issue 是公开渠道，请勿提交敏感表格内容、个人信息、Token、Cookie 或完整业务数据。Microsoft 开发者账户中的真实联系邮箱用于账户和商店管理，无需在此页面公开。
 
 ## 上线检查与填写位置
 
 1. 在 Edge InPrivate 窗口中打开实际主页和隐私页，确认 HTTPS、正常正文、无需登录或其他认证。不能使用依赖本机地址的资源。
 2. 执行 `npm run check:privacy -- <真实的 HTTPS 隐私 URL>`。保存实际执行结果；该网络检查独立于常规 `verify`。它检查 HTTPS、HTTP 200、HTML、TableFlow/Privacy 正文和明显本机地址，但不能自动批准政策内容。
 3. 把最终 URL 填入 Microsoft Partner Center 的 **Privacy → Privacy Policy URL**，并在 `manual-qa/result.json` 的隐私项目和发布报告记录对应 URL、检查日期及真实结果。`store-assets/PARTNER_CENTER_CHECKLIST.md` 保留人工确认项。
-4. 在正式提交前填写政策中的 `[REQUIRED BEFORE RELEASE]` 公开联系邮箱，同步政策文件并重新部署；再检查公开页面包含最新内容。尚未填写联系方式时不得声称已完成发布者审核。
+4. 确认线上政策的公共支持链接为 `https://github.com/ASOAT/tableflow/issues`，包含公开 Issue 的敏感信息提醒，且不存在发布占位符。修改后同步政策文件并重新部署，再检查公开页面包含最新内容。发布者须本人核对已验证的 Microsoft Edge Developer account、Individual 账户类型、`Asoat` 显示名称、代码/名称/素材发布权及真实有效的账户联系邮箱；无需公开该邮箱，部署成功也不能替代发布者审核。
 5. 再次使用匿名窗口检查最终 URL；访问无需登录，返回正文而不是仓库浏览页、404、重定向到认证页或开发服务器。
 
 GitHub 部署可完成静态 Privacy URL 发布，不代表已完成 Edge 商店提交、政策法律审核或真实 Edge/Excel 人工验收。
