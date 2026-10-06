@@ -10,6 +10,7 @@
 | `npm run release:check` | PASS，exit 0；版本一致性、冻结权限、14文件、无测试/开发API/source map/远程代码/凭据 |
 | Tests | **439 passed / 0 failed / 0 skipped**：346单元 + 93真实Chromium扩展E2E；v0.5.0的368项保留 |
 | `npm run package` | PASS，exit 0，kind=rc |
+| GitHub Windows CI | PASS：干净环境安装、release:check与RC打包；[实际作业](https://github.com/ASOAT/tableflow/actions/runs/37449436398)，源码提交20530a9 |
 | 解压RC ZIP smoke | PASS：原始manifest/UI、本地TSV、BOM CSV、独立反解析矩阵、开发API未暴露 |
 | 隐私URL检查 | PASS：匿名HTTPS、HTTP200、HTML、TableFlow/Privacy正文、无本机引用 |
 | 正式截图技术检查 | PASS：中英文各5张PNG，1280×800，缺失0；**MANUAL REVIEW REQUIRED** |
@@ -32,7 +33,7 @@ ZIP根目录直接包含manifest.json，共14个生产文件。解压目录`.tes
 - [Pages部署作业](https://github.com/ASOAT/tableflow/actions/runs/37447376682)成功。首次在Pages配置启用前失败，启用后重跑成功，未隐藏失败历史。
 - 已实际执行 `npm run check:privacy -- https://asoat.github.io/tableflow/privacy/`，匿名返回200 HTML；证据`.test-artifacts/privacy-url-check.json`。不自动改真人privacyUrl结果。
 - `site/`只含静态HTML，没有JavaScript、第三方字体、analytics、cookie或广告。隐私正文与docs及Markdown一致，披露真实autoIconSites/onboardingSeen/uiLanguage和GitHub Pages安全IP日志。
-- 站点部署工作流只上传site，官方Actions固定到已核对的提交。Windows CI对源代码执行release:check和RC package；远端CI结果见Actions，不用本地结果冒充远端执行。
+- 站点部署工作流只上传site，官方Actions固定到已核对的提交。[Windows CI](https://github.com/ASOAT/tableflow/actions/runs/37449436398)已实际成功：源码提交20530a9，干净环境安装依赖、完整release:check与RC package。此结果不代替真人Edge/Excel验收。
 - 公开联系邮箱仍为 **[REQUIRED BEFORE RELEASE]**。匿名地址已解决，政策联系方式及发布者审核仍未完成。部署说明见[SITE_DEPLOYMENT.md](SITE_DEPLOYMENT.md)。
 
 ## 最简单的真人入口
