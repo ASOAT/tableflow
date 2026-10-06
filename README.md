@@ -1,6 +1,6 @@
 # TableFlow
 
-面向 Microsoft Edge / Chromium 的本地网页表格提取扩展，使用 Manifest V3、TypeScript、Vite 和原生 HTML/CSS。当前版本为 **v0.5.1 Release Candidate**，产品功能冻结，仅完善发布工具、隐私站点、商店材料与真人验收入口。扩展没有运行时框架依赖，也没有业务服务器、登录、支付、AI、analytics 或网页上传。当前决定见 [RC 发布报告](RELEASE_CANDIDATE_REPORT.md)；[v0.5.0 报告](BETA_RELEASE_REPORT.md)为上一版历史记录。
+面向 Microsoft Edge / Chromium 的本地网页表格提取扩展，使用 Manifest V3、TypeScript、Vite 和原生 HTML/CSS。当前版本为 **v0.5.1**，发布者已提供九项真人 PASS 与实际环境，正式打包和最终 ZIP 重验通过，结论为 **READY FOR STORE SUBMISSION**。产品功能保持冻结。扩展没有运行时框架依赖，也没有业务服务器、登录、支付、AI、analytics 或网页上传。当前决定见 [最终提交报告](STORE_SUBMISSION_REPORT.md)；[RC 发布报告](RELEASE_CANDIDATE_REPORT.md)记录 RC 阶段，[v0.5.0 报告](BETA_RELEASE_REPORT.md)为上一版历史记录。
 
 ## 安装、构建与 Edge 加载
 

@@ -24,7 +24,7 @@ Excel 可自动识别数字和日期，因此显示格式变化不等同于数�
 
 新克隆项目后，先复制 `result.example.json` 为 `result.json`（Windows 终端：`copy manual-qa\result.example.json manual-qa\result.json`）。实际 `result.json` 仅保留在本地，不提交到 GitHub，避免上传测试人和人工备注。
 
-编辑 `result.json`：填写 `testedAt`（带时区的实际 ISO 日期）、`tester`、`edgeVersion`、`windowsVersion`、`excelVersion` 与实际 `privacyUrlValue`。版本可在 `edge://version`、Windows“关于”、Excel“文件 → 账户 → 关于 Excel”查到。隐私地址须为无账号密码、查询参数或片段的真实匿名 HTTPS URL。
+编辑 `result.json`：填写 `testedAt`（实际日期 `YYYY-MM-DD`，或带时区的实际 ISO 日期时间；不知道具体时间时只填日期）、`tester`、`edgeVersion`、`windowsVersion`、`excelVersion` 与实际 `privacyUrlValue`。版本可在 `edge://version`、Windows“关于”、Excel“文件 → 账户 → 关于 Excel”查到。隐私地址须为无账号密码、查询参数或片段的真实匿名 HTTPS URL。
 
 各必需项目只能按真实结论填 `pending`、`pass` 或 `fail`。结果全部通过后才把九个必需项改为小写 `pass`；记录对应 `evidence`（截图/文件路径或公开 URL）及 `notes`。未执行、失败或不确定都不能写 `pass`。不要把 CI 或 Playwright Chromium 的结果抄成真人 Edge / Excel 通过。
 
