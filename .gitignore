@@ -1,0 +1,16 @@
+node_modules/
+release/
+dist/
+coverage/
+.npm-cache/
+.vitest/
+.test-artifacts/
+test-results/
+playwright-report/
+tests/component-lab/node_modules/
+tests/component-lab/dist/
+*.log
+.DS_Store
+manual-qa/result.json
+.env
+.env.*
