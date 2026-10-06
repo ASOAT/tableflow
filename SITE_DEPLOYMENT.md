@@ -24,6 +24,8 @@ GitHub Pages 网站面向公众，不要求访问者登录。部署权限只用�
 
 当前部署结果及实际 URL 以 `RELEASE_CANDIDATE_REPORT.md` 的验收记录为准。配置存在、构建成功或仓库存在都不能代替匿名访问验证。
 
+2026-10-06 实际发布：仓库 https://github.com/ASOAT/tableflow ，主页 https://asoat.github.io/tableflow/ ，隐私政策 https://asoat.github.io/tableflow/privacy/ 。Pages工作流已成功，后者经 `npm run check:privacy` 匿名HTTPS HTML 200检查通过。公开联系邮箱仍是发布前必填项，不因此改为已审核。
+
 ## 上线检查与填写位置
 
 1. 在 Edge InPrivate 窗口中打开实际主页和隐私页，确认 HTTPS、正常正文、无需登录或其他认证。不能使用依赖本机地址的资源。

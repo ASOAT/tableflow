@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TableFlow 人工验收 02 · 合并与 CSV</title><link rel="stylesheet" href="../qa.css"></head>
+<body><main>
+  <div class="label">TableFlow · v0.5.1 RC 人工验收</div>
+  <h1>02 · 合并单元格与 CSV</h1>
+  <p>导出 CSV 后用 Microsoft Excel 直接打开，核对中文、逗号、双引号与单元格内换行。也可复制到 Excel 对比。</p>
+  <p class="notice">预期：展开后 <strong>6 行 × 6 列</strong>。合并区域只有左上角保留文字，其他位置为空；导出结果不创建 Excel 合并单元格。</p>
+  <div class="scroll"><table aria-label="合并单元格和特殊文本表">
+    <thead>
+      <tr><th rowspan="2">部门</th><th colspan="2">人员</th><th colspan="3">记录</th></tr>
+      <tr><th>姓名</th><th>城市</th><th>金额</th><th>日期</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2">财务组</td><td>李华</td><td>杭州</td><td>1,234.50</td><td>2026-10-06</td><td>第一行<br>第二行</td></tr>
+      <tr><td>王芳</td><td>上海</td><td>0.00</td><td>2026-10-07</td><td>他说&quot;已审核&quot;</td></tr>
+      <tr><td>科研组</td><td>赵明</td><td>北京</td><td>88.80</td><td></td><td>北京,上海</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="3">总计</td><td>1,323.30</td><td></td><td>3 条记录</td></tr></tfoot>
+  </table></div>
+  <p class="muted">重点检查：F3 是一个单元格中的两行；F4 双引号完整；F5 的逗号未造成错列；A4、B6、C6、E5、E6 为空。Excel 若未立即显示换行，可开启“自动换行”查看。手写矩阵：<a href="../expected/02-complex-table.json">02-complex-table.json</a>。</p>
+  <nav aria-label="其他验收页面"><a href="01-basic-table.html">01 基础表格</a><a href="03-risk-table.html">03 不完整风险提醒</a></nav>
+</main></body></html>

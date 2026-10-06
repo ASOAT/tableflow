@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TableFlow · 表格测试页</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color: #243244; background: #f5f7fa; }
+      body { max-width: 940px; margin: 48px auto; padding: 0 24px 48px; }
+      h1 { margin-bottom: 12px; }
+      h2 { margin-top: 0; font-size: 20px; }
+      p { line-height: 1.7; }
+      section { margin-top: 24px; padding: 24px; background: white; border: 1px solid #dce3eb; border-radius: 10px; }
+      table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+      caption { text-align: left; font-weight: 600; margin-bottom: 12px; }
+      th, td { border: 1px solid #ccd5e0; padding: 10px 14px; text-align: left; vertical-align: top; }
+      th { background: #edf2f8; }
+      a { color: #1766c1; }
+      code { background: #edf2f8; padding: 2px 5px; border-radius: 4px; }
+      .hidden-display { display: none; }
+      .hidden-visibility { visibility: hidden; }
+      .hidden-opacity { opacity: 0; }
+      .cell-break { white-space: pre-line; }
+      .nested { margin: 0; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>TableFlow 表格测试页</h1>
+    <p>打开工具栏中的 TableFlow，检查表格列表和提取结果。页面包含 6 个标准 HTML 表格，其中一个嵌套在另一个表格中。</p>
+    <p><a href="./empty.html">打开无表格页面</a>，检查空状态。</p>
+
+    <section>
+      <h2>1. 普通表格与表头</h2>
+      <p>预期为 3 行 × 3 列，包含 1 行表头。</p>
+      <table>
+        <caption>办公用品</caption>
+        <thead>
+          <tr><th>商品</th><th>数量</th><th>金额</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>笔记本</td><td>12</td><td>36.00</td></tr>
+          <tr><td>文件夹</td><td>5</td><td>25.00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. 合并单元格</h2>
+      <p>预期为 4 行 × 3 列。合并区域只在左上角保留文字，其他位置为空。</p>
+      <table>
+        <tbody>
+          <tr><th colspan="3">销售汇总</th></tr>
+          <tr><th>地区</th><th>月份</th><th>销售额</th></tr>
+          <tr><td rowspan="2">华东</td><td>九月</td><td>12000</td></tr>
+          <tr><td>十月</td><td>13500</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. 中文、标点、换行与空单元格</h2>
+      <p>预期为 3 行 × 4 列。保留中文、逗号、双引号与 <code>br</code> 换行；空单元格应保留位置。</p>
+      <table>
+        <thead>
+          <tr><th>姓名</th><th>说明</th><th>多行内容</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>  张三  </td><td>苹果,梨子</td><td>第一行<br />第二行</td><td></td></tr>
+          <tr><td>李四</td><td>他说：&quot;你好&quot;</td><td class="cell-break">上午
+下午</td><td>含有  合理的内部空格</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>4. 隐藏 UI 文本</h2>
+      <p>预期只保留可见的“项目名称”和“正常内容”，忽略隐藏提示和脚本内容。</p>
+      <table>
+        <tbody>
+          <tr><th>项目</th><th>内容</th></tr>
+          <tr>
+            <td>项目名称<span hidden>隐藏按钮文案</span><span class="hidden-display">CSS 隐藏提示</span></td>
+            <td>正常内容<span class="hidden-visibility">不可见提示</span><span aria-hidden="true">装饰文字</span><script type="application/json">{"internal": "脚本文本"}</script><style>.unused-fixture-rule { color: red; }</style></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>5–6. 嵌套表格</h2>
+      <p>内层表格也属于标准 HTML 表格。检查扫描结果中分别列出内外两张表，外层行列结构不应混入内层的行。</p>
+      <table>
+        <tbody>
+          <tr><th>类型</th><th>详情</th></tr>
+          <tr>
+            <td>外层记录</td>
+            <td>明细如下：<table class="nested"><tbody><tr><th>编号</th><th>数值</th></tr><tr><td>A1</td><td>42</td></tr></tbody></table></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

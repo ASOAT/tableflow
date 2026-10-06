@@ -1,0 +1,1 @@
+export function checkPrivacyUrl(raw:string,fetcher?:typeof fetch):Promise<{passed:boolean;url:string;finalUrl:string;https:boolean;status:number;html:boolean;anonymous:boolean;bytes:number;checkedAt:string}>;

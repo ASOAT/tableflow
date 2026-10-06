@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TableFlow 人工验收 03 · 风险提醒</title><link rel="stylesheet" href="../qa.css"></head>
+<body><main>
+  <div class="label">TableFlow · v0.5.1 RC 人工验收</div>
+  <h1>03 · 缺行风险提醒</h1>
+  <p>这是故意不完整的 ARIA 网格：声明了 12 条业务记录，只放入 4 条，行索引还有间隙。未显示的记录不存在于此文件中。</p>
+  <p class="notice warning">预期：TableFlow 显示<strong>可能不完整</strong>，已读取 4 条 / 预期 12 条，复制或导出前要求确认。取消后不得生成文件或修改剪贴板。确认后只能导出实际的 <strong>5 行 × 4 列</strong>，不能补出缺失记录。</p>
+  <div class="scroll"><div role="grid" aria-label="故意缺行的风险测试网格" aria-rowcount="13" aria-colcount="4">
+    <div role="row" aria-rowindex="1"><div role="columnheader" aria-colindex="1">编号</div><div role="columnheader" aria-colindex="2">姓名</div><div role="columnheader" aria-colindex="3">金额</div><div role="columnheader" aria-colindex="4">备注</div></div>
+    <div role="row" aria-rowindex="2"><div role="gridcell" aria-colindex="1">1</div><div role="gridcell" aria-colindex="2">测试甲</div><div role="gridcell" aria-colindex="3">10.00</div><div role="gridcell" aria-colindex="4">已显示</div></div>
+    <div role="row" aria-rowindex="3"><div role="gridcell" aria-colindex="1">2</div><div role="gridcell" aria-colindex="2">测试乙</div><div role="gridcell" aria-colindex="3">20.00</div><div role="gridcell" aria-colindex="4">已显示</div></div>
+    <div role="row" aria-rowindex="7"><div role="gridcell" aria-colindex="1">6</div><div role="gridcell" aria-colindex="2">测试丙</div><div role="gridcell" aria-colindex="3">60.00</div><div role="gridcell" aria-colindex="4">前面有缺行</div></div>
+    <div role="row" aria-rowindex="8"><div role="gridcell" aria-colindex="1">7</div><div role="gridcell" aria-colindex="2">测试丁</div><div role="gridcell" aria-colindex="3">70.00</div><div role="gridcell" aria-colindex="4"></div></div>
+  </div></div>
+  <p class="muted">该页面没有动态加载、分页或可收集的隐藏记录。“未检测到数据缺失”在此页面属于失败。手写预期矩阵：<a href="../expected/03-risk-table.json">03-risk-table.json</a>。</p>
+  <nav aria-label="其他验收页面"><a href="01-basic-table.html">01 基础表格</a><a href="02-complex-table.html">02 复杂合并与 CSV</a></nav>
+</main></body></html>

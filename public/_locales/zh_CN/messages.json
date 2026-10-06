@@ -1,0 +1,5 @@
+{
+  "extensionName": { "message": "TableFlow - 网页表格导出助手" },
+  "extensionDescription": { "message": "在本地把网页表格复制到 Excel 或导出 CSV，并提示数据可能不完整。" },
+  "actionTitle": { "message": "把网页表格复制到 Excel" }
+}

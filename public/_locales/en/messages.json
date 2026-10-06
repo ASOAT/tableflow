@@ -1,0 +1,5 @@
+{
+  "extensionName": { "message": "TableFlow" },
+  "extensionDescription": { "message": "Copy web tables to Excel or export CSV locally, with notices when data may be incomplete." },
+  "actionTitle": { "message": "Copy a web table to Excel" }
+}

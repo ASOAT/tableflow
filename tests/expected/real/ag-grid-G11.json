@@ -1,0 +1,41 @@
+{
+  "family": "ag-grid",
+  "scenario": "G11",
+  "type": "ag-grid",
+  "mode": "exact",
+  "rows": [
+    [
+      "姓名",
+      "城市",
+      "金额",
+      "日期"
+    ],
+    [
+      "张三",
+      "上海",
+      "¥1,299.00",
+      "2026-10-06"
+    ],
+    [
+      "李四",
+      "深圳",
+      "¥299.00",
+      "2026-10-07"
+    ],
+    [
+      "王五",
+      "北京",
+      "¥1,500.00",
+      "2026-10-08"
+    ]
+  ],
+  "columns": 4,
+  "headerRows": 1,
+  "completeness": "possibly-incomplete",
+  "expectedRows": 3,
+  "expectedColumns": 5,
+  "warnings": [
+    "COLUMN_COUNT_MISMATCH",
+    "POSSIBLY_INCOMPLETE"
+  ]
+}

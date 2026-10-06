@@ -1,0 +1,64 @@
+{
+  "tables": [
+    {
+      "type": "native-table",
+      "rows": [
+        [
+          "品类",
+          "数量"
+        ],
+        [
+          "纸张",
+          "10"
+        ],
+        [
+          "胶带",
+          "3"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    },
+    {
+      "type": "aria-grid",
+      "rows": [
+        [
+          "城市",
+          "人数"
+        ],
+        [
+          "上海",
+          "3"
+        ],
+        [
+          "深圳",
+          "5"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    },
+    {
+      "type": "div-grid",
+      "rows": [
+        [
+          "仓库",
+          "库存"
+        ],
+        [
+          "A 仓",
+          "20"
+        ],
+        [
+          "B 仓",
+          "8"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    }
+  ]
+}

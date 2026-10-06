@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "version": "0.5.1",
+  "testedAt": null,
+  "tester": null,
+  "edgeVersion": null,
+  "windowsVersion": null,
+  "excelVersion": null,
+  "privacyUrlValue": null,
+  "edgeStable": "pending",
+  "excelClipboard": "pending",
+  "excelCsv": "pending",
+  "scale100": "pending",
+  "scale125": "pending",
+  "scale150": "pending",
+  "screenshotsReviewed": "pending",
+  "privacyUrl": "pending",
+  "publisherInfoReviewed": "pending",
+  "notes": "尚未执行真人验收。自动化测试不能替代这里的结果。",
+  "evidence": {
+    "edgeStable": [],
+    "excelClipboard": [],
+    "excelCsv": [],
+    "scale100": [],
+    "scale125": [],
+    "scale150": [],
+    "screenshotsReviewed": [],
+    "privacyUrl": [],
+    "publisherInfoReviewed": []
+  }
+}

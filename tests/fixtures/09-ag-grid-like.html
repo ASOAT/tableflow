@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 09 AG Grid 风格 DOM</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.ag-root{width:900px;background:white;border:1px solid #cbd5e1}.ag-header,.ag-body-viewport{display:flex}.ag-header-row,.ag-row{display:flex;min-height:42px}.ag-header-cell,.ag-cell{width:175px;padding:10px 12px;border:1px solid #cbd5e1;box-sizing:border-box}.ag-header{background:#eaf0f7;font-weight:700}.ag-center-cols-viewport,.ag-header-viewport{flex:1;overflow:auto}.ag-pinned-left-cols-container,.ag-pinned-right-cols-container{flex:0 0 175px}</style>
+</head>
+<body>
+<h1>09 AG Grid 风格 DOM</h1>
+<p>固定列和 center 中故意存在同索引 clone，逻辑列只导出一次。</p>
+<div class="ag-root-wrapper"><div class="ag-root ag-layout-normal" role="grid" aria-rowcount="3" aria-colcount="4">
+<div class="ag-header" role="rowgroup"><div class="ag-pinned-left-header"><div class="ag-header-row" role="row" aria-rowindex="1" ><div class="ag-header-cell" role="columnheader" aria-colindex="1" col-id="col-1">编号</div></div></div><div class="ag-header-viewport"><div class="ag-header-row" role="row" aria-rowindex="1" ><div class="ag-header-cell" role="columnheader" aria-colindex="1" col-id="col-1">编号</div><div class="ag-header-cell" role="columnheader" aria-colindex="2" col-id="col-2">商品</div><div class="ag-header-cell" role="columnheader" aria-colindex="3" col-id="col-3">金额</div></div></div><div class="ag-pinned-right-header"><div class="ag-header-row" role="row" aria-rowindex="1" ><div class="ag-header-cell" role="columnheader" aria-colindex="4" col-id="col-4">状态</div></div></div></div>
+<div class="ag-body-viewport">
+<div class="ag-pinned-left-cols-container"><div class="ag-row" role="row" aria-rowindex="2" row-id="ag-2" data-row-key="ag-2"><div class="ag-cell" role="gridcell" aria-colindex="1" col-id="col-1">A001</div></div><div class="ag-row" role="row" aria-rowindex="3" row-id="ag-3" data-row-key="ag-3"><div class="ag-cell" role="gridcell" aria-colindex="1" col-id="col-1">A002</div></div></div>
+<div class="ag-center-cols-viewport"><div class="ag-center-cols-container"><div class="ag-row" role="row" aria-rowindex="2" row-id="ag-2" data-row-key="ag-2"><div class="ag-cell" role="gridcell" aria-colindex="1" col-id="col-1">A001</div><div class="ag-cell" role="gridcell" aria-colindex="2" col-id="col-2">显示器</div><div class="ag-cell" role="gridcell" aria-colindex="3" col-id="col-3">¥1,500.00</div></div><div class="ag-row" role="row" aria-rowindex="3" row-id="ag-3" data-row-key="ag-3"><div class="ag-cell" role="gridcell" aria-colindex="1" col-id="col-1">A002</div><div class="ag-cell" role="gridcell" aria-colindex="2" col-id="col-2">键盘</div><div class="ag-cell" role="gridcell" aria-colindex="3" col-id="col-3">¥299.00</div></div></div></div>
+<div class="ag-pinned-right-cols-container"><div class="ag-row" role="row" aria-rowindex="2" row-id="ag-2" data-row-key="ag-2"><div class="ag-cell" role="gridcell" aria-colindex="4" col-id="col-4">库存</div></div><div class="ag-row" role="row" aria-rowindex="3" row-id="ag-3" data-row-key="ag-3"><div class="ag-cell" role="gridcell" aria-colindex="4" col-id="col-4">缺货</div></div></div>
+</div></div></div>
+
+</body>
+</html>

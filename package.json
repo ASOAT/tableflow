@@ -1,0 +1,43 @@
+{
+  "name": "tableflow",
+  "version": "0.5.1",
+  "private": true,
+  "type": "module",
+  "description": "A local-only HTML table helper for Microsoft Edge and Chromium.",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node scripts/check-privacy.mjs && vite build && vite build --config vite.content.config.ts && vite build --config vite.content.config.ts --mode auto-icons && vite build --config vite.content.config.ts --mode background && node scripts/finalize-dist.mjs && node scripts/check-dist.mjs",
+    "build:tools": "vite build --config vite.content.config.ts --mode developer-tools",
+    "release:check": "npm run verify && node scripts/check-release.mjs",
+    "package": "npm run build && node scripts/package.mjs",
+    "release:final": "node scripts/check-manual-qa.mjs && npm run release:check && node scripts/package.mjs --final",
+    "check:privacy": "node scripts/check-privacy-url.mjs",
+    "check:screenshots": "node scripts/check-screenshots.mjs",
+    "site:preview": "node scripts/serve-site.mjs",
+    "smoke:world": "node scripts/smoke-world.mjs",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "test:install": "node scripts/install-test-browser.mjs",
+    "test:e2e": "npm run build && npm run build:tools && node scripts/run-e2e.mjs",
+    "test:components": "npm run build && npm run build:tools && node scripts/run-e2e.mjs components component-performance",
+    "lab:install": "npm --prefix tests/component-lab ci --no-audit --no-fund",
+    "verify": "node scripts/check-version.mjs && npm run typecheck && npm --prefix tests/component-lab run typecheck && npm run lint && node scripts/check-test-policy.mjs && npm test -- --reporter=default --reporter=json --outputFile=.test-artifacts/unit-results.json && npm run test:e2e && npm run build && node scripts/write-compatibility-report.mjs && node scripts/write-real-report.mjs",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/chrome": "0.3.4",
+    "@types/node": "26.6.4",
+    "eslint": "10.12.0",
+    "jsdom": "30.1.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1",
+    "vite": "8.3.2",
+    "vitest": "5.0.3"
+  }
+}

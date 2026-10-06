@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · TableFlow 自动兼容性实验室</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+li{padding:7px 0}a{color:#1766c1}</style>
+</head>
+<body>
+<h1>TableFlow 自动兼容性实验室</h1>
+<p>这些页面模拟实际 DOM 结构和行为，不加载真实框架，也不让扩展依赖框架。所有数据为本地合成测试数据。</p>
+<ol><li><a href="./01-native-table.html">01-native-table · 原生表格、thead / tbody / tfoot</a></li>
+<li><a href="./02-rowspan-colspan.html">02-rowspan-colspan · rowspan / colspan 规则展开</a></li>
+<li><a href="./03-multi-header.html">03-multi-header · 三层复杂表头</a></li>
+<li><a href="./04-aria-grid.html">04-aria-grid · ARIA grid / table / treegrid 与行列索引</a></li>
+<li><a href="./05-div-grid.html">05-div-grid · 无框架类名的重复 div 几何行</a></li>
+<li><a href="./06-ant-design-like.html">06-ant-design-like · Ant 风格固定表头、固定 clone、selection、展开与summary</a></li>
+<li><a href="./07-element-plus-like.html">07-element-plus-like · Element 多层表头、selection、expand、fixed与summary</a></li>
+<li><a href="./08-mui-grid-like.html">08-mui-grid-like · MUI 角色结构与错序索引</a></li>
+<li><a href="./09-ag-grid-like.html">09-ag-grid-like · AG Grid center / pinned 行列身份去重</a></li>
+<li><a href="./10-shadow-dom.html">10-shadow-dom · Open Shadow DOM 与不透明 closed host 诊断</a></li>
+<li><a href="./11-same-origin-iframe.html">11-same-origin-iframe · 同源 iframe 递归与跨源拒绝诊断</a></li>
+<li><a href="./12-virtual-scroll.html">12-virtual-scroll · 120行 / 20 DOM slots 的虚拟行复用与合法重复值</a></li>
+<li><a href="./13-fixed-columns.html">13-fixed-columns · 独立 pinned 分片与缺少主表列的合并</a></li>
+<li><a href="./14-hidden-elements.html">14-hidden-elements · 隐藏表、隐藏单元格和辅助文本</a></li>
+<li><a href="./15-complex-cell-content.html">15-complex-cell-content · 按钮实际值、链接、换行与特殊字符</a></li>
+<li><a href="./16-multiple-tables.html">16-multiple-tables · 同页 native / ARIA / div 候选</a></li>
+<li><a href="./17-layout-table-vs-data-table.html">17-layout-table-vs-data-table · 布局、导航、表单与真实数据区分</a></li>
+<li><a href="./18-empty-table.html">18-empty-table · 空表格的友好空状态</a></li>
+<li><a href="./19-large-table.html">19-large-table · 100 / 1000 / 5000 数据行 × 20列性能</a></li>
+<li><a href="./20-malformed-table.html">20-malformed-table · 无效 span、缺少单元格与行组边界</a></li></ol>
+<p>性能变体：<a href="./19-large-table.html?rows=1000">1000 × 20</a> · <a href="./19-large-table.html?rows=5000">5000 × 20</a></p>
+<p>启动 npm run dev 后可人工打开；自动验收使用 Chromium 加载实际扩展。Golden 输出保存在 tests/expected，禁止自动更新。</p>
+
+</body>
+</html>

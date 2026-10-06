@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 02 合并单元格</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+</style>
+</head>
+<body>
+<h1>02 合并单元格</h1>
+<p>合并区域的值只保留在左上角，其余位置为空。</p>
+<table><tbody>
+<tr><th colspan="4">地区销量</th></tr>
+<tr><th rowspan="2">地区</th><th colspan="2">2026</th><th rowspan="2">备注</th></tr>
+<tr><th>Q1</th><th>Q2</th></tr>
+<tr><td rowspan="2">华东</td><td>100</td><td>120</td><td>增长</td></tr>
+<tr><td colspan="2">暂无</td><td></td></tr>
+</tbody></table>
+
+</body>
+</html>

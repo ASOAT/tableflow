@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 04 ARIA 结构</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.two-line{display:grid;grid-template-columns:180px 250px}.two-line>span{border:1px solid #cbd5e1;padding:9px 12px}</style>
+</head>
+<body>
+<h1>04 ARIA 结构</h1>
+<p>主 grid 的 DOM 顺序刻意与 aria 行列索引不同，输出应按索引恢复。</p>
+<div role="grid" aria-label="人员" aria-rowcount="3" aria-colcount="3" class="panel">
+<div role="row" aria-rowindex="1" class="grid-line header"><div role="columnheader" aria-colindex="3">城市</div><div role="columnheader" aria-colindex="1">姓名</div><div role="columnheader" aria-colindex="2">年龄</div></div>
+<div role="row" aria-rowindex="3" class="grid-line"><div role="gridcell" aria-colindex="2">28</div><div role="rowheader" aria-colindex="1">李四</div><div role="gridcell" aria-colindex="3">深圳</div></div>
+<div role="row" aria-rowindex="2" class="grid-line"><div role="gridcell" aria-colindex="3">上海</div><div role="gridcell" aria-colindex="2">31</div><div role="rowheader" aria-colindex="1">张三</div></div>
+</div>
+<div role="table" aria-label="字段" aria-rowcount="2" aria-colcount="2" class="panel"><div role="row" aria-rowindex="1" class="two-line"><span role="columnheader" aria-colindex="1">字段</span><span role="columnheader" aria-colindex="2">值</span></div><div role="row" aria-rowindex="2" class="two-line"><span role="cell" aria-colindex="1">来源</span><span role="cell" aria-colindex="2">ARIA table</span></div></div>
+<div role="treegrid" aria-label="节点" aria-rowcount="3" aria-colcount="2" class="panel"><div role="row" aria-rowindex="1" class="two-line"><span role="columnheader" aria-colindex="1">节点</span><span role="columnheader" aria-colindex="2">状态</span></div><div role="row" aria-rowindex="2" aria-level="1" aria-expanded="true" class="two-line"><span role="rowheader" aria-colindex="1">父节点</span><span role="gridcell" aria-colindex="2">启用</span></div><div role="row" aria-rowindex="3" aria-level="2" class="two-line"><span role="rowheader" aria-colindex="1">子节点</span><span role="gridcell" aria-colindex="2">待办</span></div></div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 07 Element / Element Plus 风格 DOM</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.el-table{position:relative;width:750px}.el-table table{width:750px;min-width:0;margin:0;table-layout:fixed}.el-table__fixed{position:absolute;top:0;left:0;width:400px;background:white;box-shadow:3px 0 5px #ccd5e0}.el-table__fixed table{width:400px}.el-table th,.el-table td{height:42px;box-sizing:border-box}</style>
+</head>
+<body>
+<h1>07 Element / Element Plus 风格 DOM</h1>
+<p>表头与表体拆开，空选择 / 展开列保留，冻结 clone 不产生重复列。</p>
+<div class="el-table">
+<div class="el-table__header-wrapper"><table class="el-table__header"><thead><tr><th rowspan="2" class="el-table_1_column_1" aria-colindex="1"><input type="checkbox" aria-label="全选"></th><th rowspan="2" class="el-table_1_column_2" aria-colindex="2"></th><th rowspan="2" class="el-table_1_column_3" aria-colindex="3">商品</th><th colspan="2">库存</th></tr><tr><th class="el-table_1_column_4" aria-colindex="4">现货</th><th class="el-table_1_column_5" aria-colindex="5">预留</th></tr></thead></table></div>
+<div class="el-table__body-wrapper" style="overflow:auto;max-height:240px"><div class="el-scrollbar__wrap"><table class="el-table__body"><tbody>
+<tr class="el-table__row" data-row-key="item-1" aria-rowindex="3"><td aria-colindex="1" class="el-table_1_column_1"><input type="checkbox" aria-label="选择"></td><td aria-colindex="2" class="el-table_1_column_2"><button class="el-table__expand-icon" aria-label="展开"><svg><title>展开图标</title></svg></button></td><td aria-colindex="3" class="el-table_1_column_3"><div class="cell">白板笔</div></td><td aria-colindex="4" class="el-table_1_column_4">20</td><td aria-colindex="5" class="el-table_1_column_5">2</td></tr>
+<tr class="el-table__expanded-row"><td colspan="5" class="el-table__expanded-cell"><div>展开说明：商品包装信息。</div></td></tr>
+<tr class="el-table__row" data-row-key="item-2" aria-rowindex="4"><td aria-colindex="1" class="el-table_1_column_1"><input type="checkbox" aria-label="选择"></td><td aria-colindex="2" class="el-table_1_column_2"><button class="el-table__expand-icon" aria-label="展开"></button></td><td aria-colindex="3" class="el-table_1_column_3"><div class="cell">便签纸</div></td><td aria-colindex="4" class="el-table_1_column_4">8</td><td aria-colindex="5" class="el-table_1_column_5">1</td></tr>
+</tbody></table></div></div>
+<div class="el-table__footer-wrapper"><table class="el-table__footer"><tbody><tr><td aria-colindex="1"></td><td aria-colindex="2"></td><td aria-colindex="3">合计</td><td aria-colindex="4">28</td><td aria-colindex="5">3</td></tr></tbody></table></div>
+<div class="el-table__fixed"><div class="el-table__fixed-header-wrapper"><table><thead><tr><th rowspan="2" aria-colindex="1"><input type="checkbox" aria-label="全选"></th><th rowspan="2" aria-colindex="2"></th><th rowspan="2" aria-colindex="3">商品</th></tr><tr></tr></thead></table></div><div class="el-table__fixed-body-wrapper"><table><tbody><tr data-row-key="item-1" aria-rowindex="3"><td aria-colindex="1"><input type="checkbox" aria-label="选择"></td><td aria-colindex="2"></td><td aria-colindex="3">白板笔</td></tr><tr data-row-key="item-2" aria-rowindex="4"><td aria-colindex="1"><input type="checkbox" aria-label="选择"></td><td aria-colindex="2"></td><td aria-colindex="3">便签纸</td></tr></tbody></table></div></div>
+</div>
+
+</body>
+</html>

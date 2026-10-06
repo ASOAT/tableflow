@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TableFlow 人工验收 01 · 基础表格</title><link rel="stylesheet" href="../qa.css"></head>
+<body><main>
+  <div class="label">TableFlow · v0.5.1 RC 人工验收</div>
+  <h1>01 · 基础中文表格</h1>
+  <p>以下均为虚构测试数据。点击浏览器工具栏的 TableFlow，选择这张表并复制到 Excel；在空白工作表 A1 粘贴。</p>
+  <p class="notice">预期：含表头共 <strong>5 行 × 6 列</strong>，4 条业务记录。金额、日期及空单元格的位置须正确。Excel 可以按自身规则显示金额或日期格式，请检查实际值。</p>
+  <div class="scroll"><table aria-label="基础中文金额日期表">
+    <thead><tr><th>编号</th><th>姓名</th><th>金额</th><th>日期</th><th>部门</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>张三</td><td>1234.50</td><td>2026-10-06</td><td>财务部</td><td>正常</td></tr>
+      <tr><td>2</td><td>李四</td><td>0.00</td><td>2026-10-07</td><td></td><td>待确认</td></tr>
+      <tr><td>3</td><td>王五</td><td>-98.50</td><td></td><td>研究部</td><td></td></tr>
+      <tr><td>4</td><td>赵六</td><td>88.80</td><td>2026-10-09</td><td>行政部</td><td>中文 空格</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">核对空格：E3、D4、F4 必须为空。手写预期矩阵：<a href="../expected/01-basic-table.json">01-basic-table.json</a>。</p>
+  <nav aria-label="其他验收页面"><a href="02-complex-table.html">02 复杂合并与 CSV</a><a href="03-risk-table.html">03 不完整风险提醒</a></nav>
+</main></body></html>

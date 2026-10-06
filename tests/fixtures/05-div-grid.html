@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 05 通用 div 数据结构</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.surface{width:640px;background:white}.line{display:grid;grid-template-columns:180px 260px 200px}.datum{padding:10px 14px;border:1px solid #cbd5e1}.heading{font-weight:700;background:#eaf0f7}</style>
+</head>
+<body>
+<h1>05 通用 div 数据结构</h1>
+<p>没有 table、ARIA role 或框架 class；重复行和列的几何对齐提供识别证据。</p>
+<div class="surface">
+<div class="line heading" data-header="true"><span class="datum">仓库</span><span class="datum">商品</span><span class="datum">库存</span></div>
+<div class="line"><span class="datum">上海仓</span><span class="datum">白板笔</span><span class="datum">20</span></div>
+<div class="line"><span class="datum">深圳仓</span><span class="datum">便签纸</span><span class="datum">8</span></div>
+<div class="line"><span class="datum">北京仓</span><span class="datum">文件夹</span><span class="datum">5</span></div>
+</div>
+
+</body>
+</html>

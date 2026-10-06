@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 08 MUI DataGrid 风格 DOM</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.MuiDataGrid-root{width:840px;border:1px solid #cbd5e1;background:white}.mui-line{display:grid;grid-template-columns:repeat(4,210px)}.mui-line>div{border:1px solid #cbd5e1;padding:10px 12px}.mui-line.header{font-weight:700;background:#eaf0f7}</style>
+</head>
+<body>
+<h1>08 MUI DataGrid 风格 DOM</h1>
+<div class="MuiDataGrid-root" role="grid" aria-label="价格清单" aria-rowcount="3" aria-colcount="4">
+<div class="MuiDataGrid-columnHeaders" role="rowgroup"><div role="row" aria-rowindex="1" class="mui-line header">
+<div class="MuiDataGrid-columnHeader" role="columnheader" aria-colindex="4">状态</div><div class="MuiDataGrid-columnHeader" role="columnheader" aria-colindex="1">SKU</div><div class="MuiDataGrid-columnHeader" role="columnheader" aria-colindex="3">增长</div><div class="MuiDataGrid-columnHeader" role="columnheader" aria-colindex="2">金额</div>
+</div></div>
+<div class="MuiDataGrid-virtualScroller" style="overflow:auto;height:150px"><div class="MuiDataGrid-virtualScrollerRenderZone" role="rowgroup">
+<div class="MuiDataGrid-row mui-line" role="row" aria-rowindex="2" data-id="sku-1"><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="3">+18.3%</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="2">¥1,299.00</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="4">正常</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="1">SKU-A001</div></div>
+<div class="MuiDataGrid-row mui-line" role="row" aria-rowindex="3" data-id="sku-2"><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="2">¥299.00</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="4">待核对</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="1">SKU-A002</div><div class="MuiDataGrid-cell" role="gridcell" aria-colindex="3">-2.0%</div></div>
+</div></div></div>
+
+</body>
+</html>

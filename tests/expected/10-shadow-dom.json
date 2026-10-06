@@ -1,0 +1,30 @@
+{
+  "tables": [
+    {
+      "type": "native-table",
+      "rows": [
+        [
+          "设备",
+          "数量"
+        ],
+        [
+          "显示器",
+          "2"
+        ],
+        [
+          "键盘",
+          "4"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "CLOSED_SHADOW_ROOT",
+      "certainty": "possible"
+    }
+  ]
+}

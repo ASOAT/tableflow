@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableFlow</title>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <div>
+          <h1>TableFlow</h1>
+          <p class="subtitle" data-i18n="subtitle"></p>
+        </div>
+        <button id="rescan" type="button" data-i18n="rescan"></button>
+      </header>
+      <section class="settings" data-i18n-label="settings">
+        <label class="setting"><input id="site-icons" type="checkbox" disabled /><span data-i18n="siteIcons"></span></label>
+        <p id="site-hint" class="setting-hint" data-i18n="siteLoading"></p>
+        <label class="setting"><input id="include-layout" type="checkbox" /><span data-i18n="includeLayout"></span></label>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite" data-i18n="scanLoading"></p>
+      <ul id="scan-notices" class="warnings" hidden data-i18n-label="scanHints"></ul>
+      <details id="scan-details" class="technical" hidden><summary data-i18n="details"></summary><ul id="scan-diagnostics"></ul></details>
+      <section id="table-section" hidden data-i18n-label="detected">
+        <fieldset>
+          <legend data-i18n="choose"></legend>
+          <div id="table-list" class="table-list"></div>
+        </fieldset>
+      </section>
+      <section id="selection" class="selection" hidden aria-labelledby="selection-title">
+        <h2 id="selection-title"></h2>
+        <span id="selection-state" class="state-badge"></span>
+        <p id="selection-summary" class="muted"></p>
+        <ul id="table-warnings" class="warnings" hidden data-i18n-label="tableHints"></ul>
+        <details id="table-details" class="technical"><summary data-i18n="details"></summary><p id="technical-summary"></p><ul id="technical-warnings"></ul></details>
+        <p id="preview-scope" class="stage-note"></p>
+        <div id="matrix-preview" class="matrix-preview" tabindex="0" role="region" data-i18n-label="preview"></div>
+        <div class="actions">
+          <button id="collect" type="button" hidden data-i18n="collect"></button>
+          <button id="cancel-collect" type="button" hidden data-i18n="cancelCollect"></button>
+          <button id="copy" class="primary" type="button" disabled data-i18n="copy"></button>
+          <button id="export-csv" type="button" disabled data-i18n="csv"></button>
+        </div>
+        <p id="action-status" class="stage-note" role="status" aria-live="polite"></p>
+      </section>
+      <footer><span data-i18n="footer"></span><button id="help" type="button" data-i18n="help"></button></footer>
+    </main>
+    <dialog id="export-confirm" aria-labelledby="export-confirm-title" aria-describedby="export-confirm-notice">
+      <h2 id="export-confirm-title" data-i18n="exportCurrent"></h2>
+      <p id="export-confirm-notice"></p>
+      <div class="actions">
+        <button id="confirm-export" class="primary" type="button"></button>
+        <button id="cancel-export" type="button" data-i18n="cancel"></button>
+      </div>
+    </dialog>
+    <dialog id="onboarding-dialog" aria-labelledby="onboarding-title" aria-describedby="onboarding-privacy">
+      <h2 id="onboarding-title" data-i18n="onboardingTitle"></h2>
+      <ol class="steps"><li data-i18n="onboarding1"></li><li data-i18n="onboarding2"></li><li data-i18n="onboarding3"></li></ol>
+      <p id="onboarding-privacy" data-i18n="onboardingPrivacy"></p>
+      <button id="start-using" class="primary" type="button" data-i18n="start"></button>
+    </dialog>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <h2 id="help-title" data-i18n="helpTitle"></h2>
+      <ol class="steps"><li data-i18n="onboarding1"></li><li data-i18n="onboarding2"></li><li data-i18n="onboarding3"></li></ol>
+      <p data-i18n="helpScope"></p><p data-i18n="helpExcel"></p><p data-i18n="onboardingPrivacy"></p>
+      <label class="language"><span data-i18n="language"></span><select id="language"><option value="zh-CN">中文</option><option value="en">English</option></select></label>
+      <h3 data-i18n="reportTitle"></h3><p data-i18n="reportPrivacy"></p><p id="report-hint" class="stage-note"></p>
+      <div class="actions"><button id="copy-report" type="button" data-i18n="reportCopy"></button><button id="debug-report" type="button" data-i18n="reportDownload"></button></div>
+      <p id="report-status" role="status" aria-live="polite"></p><p id="version" class="stage-note"></p>
+      <button id="close-help" type="button" data-i18n="close"></button>
+    </dialog>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

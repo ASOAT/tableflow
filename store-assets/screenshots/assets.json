@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "languages": {
+    "zh-CN": { "directory": "zh-CN" },
+    "en": { "directory": "en" }
+  },
+  "visualReview": "MANUAL REVIEW REQUIRED"
+}

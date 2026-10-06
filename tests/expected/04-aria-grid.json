@@ -1,0 +1,63 @@
+{
+  "tables": [
+    {
+      "type": "aria-grid",
+      "rows": [
+        [
+          "姓名",
+          "年龄",
+          "城市"
+        ],
+        [
+          "张三",
+          "31",
+          "上海"
+        ],
+        [
+          "李四",
+          "28",
+          "深圳"
+        ]
+      ],
+      "columns": 3,
+      "headerRows": 1,
+      "complete": true
+    },
+    {
+      "type": "aria-grid",
+      "rows": [
+        [
+          "字段",
+          "值"
+        ],
+        [
+          "来源",
+          "ARIA table"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    },
+    {
+      "type": "aria-grid",
+      "rows": [
+        [
+          "节点",
+          "状态"
+        ],
+        [
+          "父节点",
+          "启用"
+        ],
+        [
+          "子节点",
+          "待办"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    }
+  ]
+}

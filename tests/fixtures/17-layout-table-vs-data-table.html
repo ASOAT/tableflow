@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 17 布局表与数据表</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.layout{width:100%}.layout>tbody>tr>td{border:0;background:#f5f7fa}.layout nav table{min-width:140px}</style>
+</head>
+<body>
+<h1>17 布局表与数据表</h1>
+<table class="layout" role="presentation"><tbody><tr><td><nav><table><tbody><tr><td><a href="#data">数据查询</a></td></tr><tr><td><a href="#reports">报表</a></td></tr><tr><td><a href="#settings">设置</a></td></tr></tbody></table></nav></td><td>
+<form><table role="presentation"><tbody><tr><td><label for="q">查询条件</label></td><td><input id="q" value="笔记本"></td></tr><tr><td colspan="2"><button type="button">查询</button></td></tr></tbody></table></form>
+<table id="data"><caption>实际数据</caption><thead><tr><th>名称</th><th>数量</th><th>单价</th></tr></thead><tbody><tr><td>笔记本</td><td>12</td><td>3.00</td></tr><tr><td>文件夹</td><td>5</td><td>5.00</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+</body>
+</html>

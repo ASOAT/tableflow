@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 16 多种结构共存</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+.pair{display:grid;grid-template-columns:220px 220px}.pair>span{padding:10px 14px;border:1px solid #cbd5e1}.heading{font-weight:700;background:#eaf0f7}.surface{width:440px}</style>
+</head>
+<body>
+<h1>16 多种结构共存</h1>
+<section class="panel"><h2>原生表</h2><table><thead><tr><th>品类</th><th>数量</th></tr></thead><tbody><tr><td>纸张</td><td>10</td></tr><tr><td>胶带</td><td>3</td></tr></tbody></table></section>
+<section class="panel"><h2>ARIA 表</h2><div role="grid" aria-rowcount="3" aria-colcount="2"><div role="row" aria-rowindex="1" class="pair heading"><span role="columnheader" aria-colindex="1">城市</span><span role="columnheader" aria-colindex="2">人数</span></div><div role="row" aria-rowindex="2" class="pair"><span role="gridcell" aria-colindex="1">上海</span><span role="gridcell" aria-colindex="2">3</span></div><div role="row" aria-rowindex="3" class="pair"><span role="gridcell" aria-colindex="1">深圳</span><span role="gridcell" aria-colindex="2">5</span></div></div></section>
+<section class="panel"><h2>普通 div 数据表</h2><div class="surface"><div class="pair heading" data-header="true"><span>仓库</span><span>库存</span></div><div class="pair"><span>A 仓</span><span>20</span></div><div class="pair"><span>B 仓</span><span>8</span></div></div></section>
+
+</body>
+</html>

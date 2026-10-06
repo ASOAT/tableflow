@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TableFlow · 页面兼容性测试</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color: #243244; background: #f4f6f9; }
+      body { max-width: 1100px; margin: 32px auto; padding: 0 20px 40px; }
+      h1 { margin-bottom: 10px; }
+      h2 { font-size: 20px; margin-top: 0; }
+      p { line-height: 1.7; }
+      a { color: #1766c1; }
+      button { cursor: pointer; padding: 8px 13px; border: 1px solid #b9c7d8; border-radius: 6px; background: white; color: #243244; }
+      button:hover { background: #edf3fc; }
+      .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 18px 0; }
+      .status { color: #4d6077; font-size: 14px; }
+      .page-layout { width: 100%; border-collapse: collapse; table-layout: fixed; }
+      .page-layout > tbody > tr > td { padding: 0; border: 0; vertical-align: top; }
+      .page-layout > tbody > tr > .sidebar { width: 185px; padding-right: 20px; }
+      nav, section, .form-box { padding: 20px; border: 1px solid #dce3eb; border-radius: 9px; background: white; margin-bottom: 20px; }
+      nav table, .form-box table { width: 100%; }
+      nav td { padding: 8px 0; }
+      .form-box td { padding: 5px 0; }
+      .form-box input { width: 108px; padding: 5px; }
+      .data-table, .datagrid-view table { width: 100%; border-collapse: collapse; }
+      #standard-slot { overflow: auto; }
+      .data-table { min-width: 1000px; }
+      .data-table th, .data-table td, .datagrid-view th, .datagrid-view td { border: 1px solid #ccd5e0; padding: 10px 12px; text-align: left; }
+      .data-table th, .datagrid-header td { background: #edf2f8; font-weight: 600; }
+      .datagrid-view { display: flex; border: 1px solid #ccd5e0; border-radius: 5px; overflow: hidden; }
+      .datagrid-view1 { flex: 0 0 100px; }
+      .datagrid-view2 { flex: 1; min-width: 0; }
+      .datagrid-body { overflow: auto; }
+      .datagrid-view td { height: 42px; box-sizing: border-box; }
+      .datagrid-view2 td:first-child { width: 55%; }
+      .datagrid-view2 td:last-child { width: 45%; }
+      iframe { width: 100%; height: 240px; border: 1px solid #ccd5e0; border-radius: 5px; }
+      .hidden-table { display: none; }
+      @media (max-width: 720px) { .page-layout > tbody > tr > .sidebar { width: 140px; padding-right: 10px; } nav, section, .form-box { padding: 12px; } }
+    </style>
+  </head>
+  <body>
+    <h1>TableFlow 页面兼容性测试</h1>
+    <p>这个页面包含布局、导航、表单、隐藏和空表格，以及真正的数据表、同源 iframe 和 EasyUI 风格的拆分表格。默认列表应优先展示数据，表格旁的图标应复制对应的完整矩阵。</p>
+    <div class="controls">
+      <button id="preview-icons" type="button">预览复制图标（开发测试）</button>
+      <span id="preview-status" class="status" role="status">预览需要先完成 npm run build；仅在此测试页加载本地构建。</span>
+    </div>
+
+    <table class="page-layout" role="presentation">
+      <tbody><tr>
+        <td class="sidebar">
+          <nav aria-label="测试导航">
+            <strong>导航布局表</strong>
+            <table><tbody>
+              <tr><td><a href="#standard">普通数据表</a></td></tr>
+              <tr><td><a href="#split">拆分数据表</a></td></tr>
+              <tr><td><a href="#frame">iframe 数据</a></td></tr>
+              <tr><td><a href="./empty.html">空状态</a></td></tr>
+            </tbody></table>
+          </nav>
+          <div class="form-box">
+            <strong>表单布局表</strong>
+            <table><tbody>
+              <tr><td><label for="query">查询条件</label></td></tr>
+              <tr><td><input id="query" value="测试数据" /></td></tr>
+              <tr><td><button type="button">表单操作</button></td></tr>
+            </tbody></table>
+          </div>
+        </td>
+        <td>
+          <section id="standard">
+            <h2>普通数据表</h2>
+            <div class="controls">
+              <button id="add-row" type="button">动态添加一行</button>
+              <button id="rebuild-table" type="button">查询（重建表格）</button>
+              <span id="query-status" class="status" role="status">初始 2 行数据。</span>
+            </div>
+            <div id="standard-slot" tabindex="0" role="region" aria-label="横向滚动数据表">
+              <table id="orders" class="data-table">
+                <thead><tr><th>订单编号</th><th>商品</th><th>数量</th><th>备注</th></tr></thead>
+                <tbody>
+                  <tr><td>T001</td><td>笔记本</td><td>12</td><td>含逗号,测试</td></tr>
+                  <tr><td>T002</td><td>文件夹</td><td>5</td><td>第一行<br />第二行</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="split">
+            <h2>EasyUI 风格：表头 / 表体 / 冻结列</h2>
+            <p>下面由 4 张物理表格组成，预期合为 1 张 3 行 × 3 列的逻辑数据表；冻结的编号列在左侧。</p>
+            <div class="datagrid-wrap">
+              <div class="datagrid-view">
+                <div class="datagrid-view1">
+                  <div class="datagrid-header"><div class="datagrid-header-inner">
+                    <table class="datagrid-htable"><tbody><tr class="datagrid-header-row"><td field="id"><span>编号</span></td></tr></tbody></table>
+                  </div></div>
+                  <div class="datagrid-body"><div class="datagrid-body-inner">
+                    <table class="datagrid-btable"><tbody>
+                      <tr class="datagrid-row" datagrid-row-index="0"><td field="id">E001</td></tr>
+                      <tr class="datagrid-row" datagrid-row-index="1"><td field="id">E002</td></tr>
+                    </tbody></table>
+                  </div></div>
+                </div>
+                <div class="datagrid-view2">
+                  <div class="datagrid-header"><div class="datagrid-header-inner">
+                    <table class="datagrid-htable"><tbody><tr class="datagrid-header-row"><td field="item"><span>商品</span></td><td field="quantity"><span>数量</span></td></tr></tbody></table>
+                  </div></div>
+                  <div class="datagrid-body">
+                    <table class="datagrid-btable"><tbody>
+                      <tr class="datagrid-row" datagrid-row-index="0"><td field="item">白板笔</td><td field="quantity">20</td></tr>
+                      <tr class="datagrid-row" datagrid-row-index="1"><td field="item">便签纸</td><td field="quantity">8</td></tr>
+                    </tbody></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="frame">
+            <h2>同源 iframe</h2>
+            <p>子页面包含 1 张 3 行 × 3 列的数据表；从父页面扫描时应标明来源。</p>
+            <iframe src="./frame-data.html" title="同源数据表测试"></iframe>
+          </section>
+
+          <table id="hidden-data" class="hidden-table"><thead><tr><th>隐藏表头</th><th>隐藏数值</th></tr></thead><tbody><tr><td>不可见</td><td>10</td></tr></tbody></table>
+          <table id="empty-table"><tbody></tbody></table>
+        </td>
+      </tr></tbody>
+    </table>
+
+    <script>
+      let nextRow = 3;
+      const status = document.getElementById('query-status');
+      document.getElementById('add-row').addEventListener('click', () => {
+        const row = document.querySelector('#orders tbody').insertRow();
+        ['T' + String(nextRow).padStart(3, '0'), '动态商品', String(nextRow), '查询后可继续添加'].forEach((value) => {
+          row.insertCell().textContent = value;
+        });
+        nextRow += 1;
+        status.textContent = '现在有 ' + document.querySelector('#orders tbody').rows.length + ' 行数据。';
+      });
+      document.getElementById('rebuild-table').addEventListener('click', () => {
+        const oldTable = document.getElementById('orders');
+        const replacement = oldTable.cloneNode(true);
+        const body = replacement.tBodies[0];
+        body.replaceChildren();
+        [['Q001', '查询结果 A', '3', '新的表格节点'], ['Q002', '查询结果 B', '7', '他说："你好"']].forEach((values) => {
+          const row = body.insertRow();
+          values.forEach((value) => { row.insertCell().textContent = value; });
+        });
+        oldTable.replaceWith(replacement);
+        nextRow = 3;
+        status.textContent = '已用新的 table 节点替换表格，复制图标应自动更新。';
+      });
+
+      let iconsEnabled = false;
+      let scriptLoaded = false;
+      const previewButton = document.getElementById('preview-icons');
+      const previewStatus = document.getElementById('preview-status');
+      previewButton.addEventListener('click', async () => {
+        previewButton.disabled = true;
+        try {
+          if (!scriptLoaded) {
+            await new Promise((resolve, reject) => {
+              const script = document.createElement('script');
+              // Vite does not watch its output directory: bypass stale preview transforms.
+              script.src = '/dist/content.js?preview=' + Date.now();
+              script.onload = resolve;
+              script.onerror = () => reject(new Error('本地构建缺失或加载失败。请先执行 npm run build，然后刷新页面。'));
+              document.head.append(script);
+            });
+            scriptLoaded = true;
+          }
+          if (typeof globalThis.TableFlowScanner?.setTableIcons !== 'function') {
+            throw new Error('构建版本不包含图标预览接口，请重新执行 npm run build 并刷新页面。');
+          }
+          iconsEnabled = !iconsEnabled;
+          await globalThis.TableFlowScanner.setTableIcons(iconsEnabled);
+          previewButton.textContent = iconsEnabled ? '关闭复制图标（开发测试）' : '预览复制图标（开发测试）';
+          previewStatus.textContent = iconsEnabled ? '本页开发预览已启用，可测试复制、滚动、iframe 和动态表格。' : '本页开发预览已关闭。';
+        } catch (error) {
+          previewStatus.textContent = error instanceof Error ? error.message : '预览失败，请先构建并刷新页面。';
+        } finally {
+          previewButton.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

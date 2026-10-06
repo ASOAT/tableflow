@@ -1,0 +1,12 @@
+{
+  "family": "antd",
+  "scenario": "A11",
+  "type": "ant-design",
+  "mode": "empty",
+  "rows": [],
+  "columns": 5,
+  "headerRows": 1,
+  "completeness": "complete",
+  "expectedRows": 0,
+  "warnings": []
+}

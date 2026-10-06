@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 14 隐藏元素</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+</style>
+</head>
+<body>
+<h1>14 隐藏元素</h1>
+<table><thead><tr><th>名称</th><th>隐藏列</th><th>数值</th><th>备注</th></tr></thead><tbody>
+<tr><td>实际内容<span hidden>隐藏提示</span><span aria-hidden="true">重复辅助文本</span><svg><title>图形标题</title></svg></td><td style="display:none">秘密值</td><td>42<span role="tooltip">工具提示</span></td><td>可见内容<span style="visibility:hidden">不可见内容</span></td></tr>
+<tr><td>正常<span style="opacity:0">透明噪音</span></td><td hidden>被隐藏</td><td><span style="display:none">全隐藏值</span></td><td>结束</td></tr>
+</tbody></table>
+<table style="display:none"><thead><tr><th>隐藏表</th><th>数值</th></tr></thead><tbody><tr><td>不应展示</td><td>100</td></tr></tbody></table>
+
+</body>
+</html>

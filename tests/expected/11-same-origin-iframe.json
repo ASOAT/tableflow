@@ -1,0 +1,48 @@
+{
+  "tables": [
+    {
+      "type": "native-table",
+      "rows": [
+        [
+          "来源",
+          "项目"
+        ],
+        [
+          "主页面",
+          "办公用品"
+        ]
+      ],
+      "columns": 2,
+      "headerRows": 1,
+      "complete": true
+    },
+    {
+      "type": "native-table",
+      "rows": [
+        [
+          "编号",
+          "项目",
+          "数量"
+        ],
+        [
+          "F001",
+          "显示器",
+          "2"
+        ],
+        [
+          "F002",
+          "键盘",
+          "4"
+        ]
+      ],
+      "columns": 3,
+      "headerRows": 1,
+      "complete": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "CROSS_ORIGIN_FRAME_PERMISSION"
+    }
+  ]
+}

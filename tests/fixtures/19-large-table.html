@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TableFlow · 19 大表格性能</title>
+<style>:root{font-family:system-ui,sans-serif;color:#243244;background:#f5f7fa}body{max-width:1100px;margin:32px auto;padding:0 24px 40px}h1{font-size:24px}p{line-height:1.65}table{border-collapse:collapse;margin:12px 0;min-width:480px;background:white}th,td{border:1px solid #cbd5e1;padding:9px 12px;text-align:left;vertical-align:top}th{background:#eaf0f7}.panel{padding:16px;border:1px solid #cbd5e1;background:white;margin:16px 0}.grid-line{display:grid;grid-template-columns:repeat(3,180px)}.grid-line>div,.grid-line>span{border:1px solid #cbd5e1;padding:9px 12px;background:white}.grid-line.header>div,.grid-line.header>span{font-weight:600;background:#eaf0f7}[hidden]{display:none!important}.hidden{display:none}.muted{color:#617188}.breaks{white-space:pre-line}button{padding:5px 9px}iframe{width:750px;height:240px;border:1px solid #cbd5e1}
+#performance{font-size:13px}#performance th,#performance td{min-width:92px;white-space:nowrap;padding:5px 7px}</style>
+</head>
+<body>
+<h1>19 大表格性能</h1>
+<p id="size-description">生成本地测试数据。</p><table id="performance"><thead><tr></tr></thead><tbody></tbody></table>
+<script>
+(() => {
+  const requested = Number(new URLSearchParams(location.search).get('rows') || '100');
+  const count = [100,1000,5000].includes(requested) ? requested : 100;
+  const header = document.querySelector('#performance thead tr');
+  for (let col = 1; col <= 20; col += 1) {
+    const cell = document.createElement('th');
+    cell.textContent = col === 1 ? '编号' : '列 ' + String(col).padStart(2,'0');
+    header.append(cell);
+  }
+  const fragment = document.createDocumentFragment();
+  for (let rowIndex = 1; rowIndex <= count; rowIndex += 1) {
+    const row = document.createElement('tr');
+    for (let col = 1; col <= 20; col += 1) {
+      const cell = document.createElement('td');
+      cell.textContent = col === 1 ? 'R' + String(rowIndex).padStart(4,'0') : '数据 ' + rowIndex + ':' + col;
+      row.append(cell);
+    }
+    fragment.append(row);
+  }
+  document.querySelector('#performance tbody').append(fragment);
+  document.getElementById('size-description').textContent = count + ' 条数据 × 20 列，另有 1 行表头。';
+})();
+</script>
+</body>
+</html>
